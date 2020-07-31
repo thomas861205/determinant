@@ -44,16 +44,17 @@ int det(int **ptr, int n){
 int main(void){
 	int i, j;
 	int size;
-	scanf("%d",&size);
 
-	int **row = malloc(sizeof(int *)*size);
-	for (i = 0; i < size; i++)
+	scanf("%d", &size);
+	int **row = malloc(sizeof(int *) * size);
+	for (i = 0; i < size; i++) {
 		row[i] = malloc(sizeof(int)*size);
-
-	for (i = 0; i< size; i++)
-		for (j = 0; j< size; j++)
+	}
+	for (i = 0; i< size; i++) {
+		for (j = 0; j< size; j++) {
 			scanf("%d", &row[i][j]);
-	// print(row, size);
-	printf("%d", det(row, size));
+		}
+	}
+	printf("%d\n", det(row, size));
 	return 0;
 }
